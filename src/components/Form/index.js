@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import logo from "../../assets/img/logo.png";
 import { 
   Container,
@@ -12,7 +12,8 @@ import {
   Button,
 } from "./styled";
 
-const Form = () => {
+const Form = ({onClick, setDocument}) => {
+
   return (
     <Container>
       <Header>
@@ -22,8 +23,8 @@ const Form = () => {
         <Wrapper>
           <Title>Bienvenido a ePayco</Title>
           <Text>Consulte sus facturas</Text>
-          <Input placeholder="Número de identificación" />
-          <Button>Consultar</Button>
+          <Input placeholder="Número de identificación" onChange={(e) => setDocument(e.target.value)}/>
+          <Button onClick={onClick}>Consultar</Button>
         </Wrapper>
       </Welcome>
     </Container>
